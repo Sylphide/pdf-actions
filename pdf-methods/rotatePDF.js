@@ -1,4 +1,4 @@
-const { degrees } = require("pdf-lib");
+const { degrees } = require('@cantoo/pdf-lib');
 
 const rotatePDF = async (pdfDoc, degree) => {
   const pages = pdfDoc.getPages();

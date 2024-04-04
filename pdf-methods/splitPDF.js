@@ -1,5 +1,5 @@
-const { degrees } = require("pdf-lib");
-const { EmptyPDFDocument } = require("./createFileDoc");
+const { degrees } = require('@cantoo/pdf-lib');
+const { EmptyPDFDocument } = require('./createFileDoc');
 
 const createArray = (start, stop) => {
   const res = [];

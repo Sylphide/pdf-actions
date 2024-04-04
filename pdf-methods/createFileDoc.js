@@ -1,5 +1,5 @@
-const { PDFDocument } = require("pdf-lib");
-const pdfArray = require("./pdfArray");
+const { PDFDocument } = require('@cantoo/pdf-lib');
+const pdfArray = require('./pdfArray');
 
 const EmptyPDFDocument = async () => await PDFDocument.create();
 

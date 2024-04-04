@@ -1,8 +1,8 @@
-const { degrees, PageSizes } = require("pdf-lib");
+const { degrees, PageSizes } = require('@cantoo/pdf-lib');
 
 const addMarginPDF = async (pdfDoc, marginMillimeter, degree = 0) => {
   const pages = pdfDoc.getPages();
-  const multiplier = PageSizes["A4"][0] / 210;
+  const multiplier = PageSizes['A4'][0] / 210;
   const margin = [
     marginMillimeter[0] * multiplier, // Left
     marginMillimeter[1] * multiplier, // Top

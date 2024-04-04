@@ -1,4 +1,4 @@
-const { PageSizes, StandardFonts } = require("pdf-lib");
+const { PageSizes, StandardFonts } = require('@cantoo/pdf-lib');
 
 const marginValuesNumber = {
   Recommended: 10,
@@ -27,21 +27,21 @@ const getTextPosition = (
   let textPositionX = 0,
     textPositionY = 0;
 
-  if (pageNumberPosition[0] === "b") {
+  if (pageNumberPosition[0] === 'b') {
     textPositionY = (textHeight - marginValues[1] - marginValues[3]) / 2;
   }
-  if (pageNumberPosition[0] === "t") {
+  if (pageNumberPosition[0] === 't') {
     textPositionY =
       height - textHeight - marginValues[1] / 2 - marginValues[3] / 2;
   }
 
-  if (pageNumberPosition[2] === "l") {
+  if (pageNumberPosition[2] === 'l') {
     textPositionX = textWidth * 2;
   }
-  if (pageNumberPosition[2] === "c") {
+  if (pageNumberPosition[2] === 'c') {
     textPositionX = width / 2 - textWidth / 2;
   }
-  if (pageNumberPosition[2] === "r") {
+  if (pageNumberPosition[2] === 'r') {
     textPositionX = width - textWidth * 2;
   }
 
@@ -50,15 +50,15 @@ const getTextPosition = (
 
 const addPageNumbers = async (
   pdfDoc,
-  pageNumberPosition = "b-c",
-  margin = "Recommended",
+  pageNumberPosition = 'b-c',
+  margin = 'Recommended',
   startFromPage = 1,
   endPage = pdfDoc.getPageCount(),
   startingNumber = 1,
   textSize = 16
 ) => {
   const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
-  const multiplier = PageSizes["A4"][0] / 210;
+  const multiplier = PageSizes['A4'][0] / 210;
   const marginValue = marginValuesNumber[margin];
   const marginValues = [0, 0, 0, 0];
   marginValues[marginIndexPagePosition[pageNumberPosition[0]]] =
